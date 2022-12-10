@@ -1,5 +1,6 @@
 package com.example.itemsAPI.repository.entity;
 
+import com.example.itemsAPI.ItemController.dto.ItemDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +11,7 @@ public class Item
 {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    private Integer id = null;
 
     private String name;
 
@@ -19,6 +20,15 @@ public class Item
     private String price;
 
     private String imageUrl;
+
+    public Item () {}
+
+    public Item (ItemDto itemDto) {
+        this.name = itemDto.getName();
+        this.description = itemDto.getDescription();
+        this.imageUrl = itemDto.getImageUrl();
+        this.price = itemDto.getPrice();
+    }
 
     public Integer getId()
     {
@@ -66,5 +76,12 @@ public class Item
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Item{" + "id=" + id + ", name='" + name + '\'' + ", description='" + description + '\'' + ", imageUrl='"
+                + imageUrl + '\'' + '}';
     }
 }

@@ -1,0 +1,3 @@
+[submodule "itemsAPI/src/frontend/build/-f"]
+	path = itemsAPI/src/frontend/build/-f
+	url = https://github.com/yhuang306/BaoSingSe_Final-Project.git

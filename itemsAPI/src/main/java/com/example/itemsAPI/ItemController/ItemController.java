@@ -20,22 +20,26 @@ public class ItemController{
         this.itemService = itemService;
     }
 
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/all")
     public Iterable<Item> getItems(){
         return itemService.all();
     }
 
+    @CrossOrigin
     @PostMapping
     public Item save( @RequestBody ItemDto itemDto )
     {
         return itemService.save( new Item( itemDto ) );
     }
 
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/{id}")
     public Item findItemById(@PathVariable Integer id) {
         return itemService.findById(id).orElse(null);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @PutMapping( "/{id}" )
     public Item update( @RequestBody ItemDto itemDto, @PathVariable Integer id )
     {
@@ -47,6 +51,7 @@ public class ItemController{
         return itemService.save( item );
     }
 
+    @CrossOrigin("http://localhost:8080")
     @DeleteMapping( "/{id}" )
     public void delete( @PathVariable Integer id )
     {

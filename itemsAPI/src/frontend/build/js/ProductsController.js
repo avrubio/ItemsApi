@@ -98,8 +98,7 @@ class ProductsController {
           method: "DELETE", // or 'PUT'
           headers: {
             "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+          }
         });
         const responseJSO = await response.json();
       } catch(e)

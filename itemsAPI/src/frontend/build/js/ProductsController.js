@@ -10,7 +10,7 @@ class ProductsController {
     save(name, description, price, imageUrl);
     
     const product = {
-      id: id,
+      id: ++this.currentId,
       name: name,
       description: description,
       price: price,
@@ -50,9 +50,6 @@ class ProductsController {
     }
   }
 
-  getData(id) {
-    deleteDrama(id);
-  }
   }
 
   async function save(name, description, price, imageUrl) {
@@ -67,11 +64,6 @@ class ProductsController {
       body: JSON.stringify(data),
     });
       const responseJSO = await response.json();
-      console.log(responseJSO);
-      
-    document.getElementById('test').innerText = responseJSO.id;
-    
-    
     
   } catch(e)
  {
@@ -79,20 +71,6 @@ class ProductsController {
  }    
       
   }
-
-/*   async function getData()  {
-  
-    try {
-        const response = await fetch('http://localhost:8080/item/all');
-        const responseJSO = await response.json();
-        console.log(responseJSO);
-
-    } catch (e) {
-        console.log(e);
-    }
-} */
-
-
 
   async function update(name, description, price, imageUrl) {
     try{
@@ -113,12 +91,8 @@ class ProductsController {
         
     }
 
-    async function deleteDrama(id) {
+    async function deleteProduct(itemId) {
       try{
-        const response1 = await fetch('http://localhost:8080/item/all');
-        const responseJSO1 = await response1.json();
-        const itemId = responseJSO1[id - 1].id;
-        console.log(itemId);
         const url = "http://localhost:8080/item/" + itemId;
         const response = await fetch(url, {
           method: "DELETE", // or 'PUT'

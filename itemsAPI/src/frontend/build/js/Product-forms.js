@@ -2,7 +2,7 @@
 // Initialize a new ItemsController with currentId set to 0
 const productsController = new ProductsController();
 
-// Select the New Item Form
+/* // Select the New Item Form
 const newProductForm = document.querySelector('#newProductForm');
 
 // Add an 'onsubmit' event listener
@@ -35,4 +35,26 @@ newProductForm.addEventListener('submit', (event) => {
     newProductDescription.value = '';    
     newProductPrice.value = ''; 
     newProductImageUrl.value = ''; 
+}); */
+
+const newDeleteProductForm = document.querySelector('#newDeleteProductForm');
+
+// Add an 'onsubmit' event listener
+newDeleteProductForm.addEventListener('submit', () => {
+
+
+
+    const newProductId = document.querySelector('#id').value;
+    console.log(newProductId);
+
+
+
+
+
+    deleteProduct(newProductId);
+
+
+
+    // Clear the form
+    newProductName.value = '';
 });

@@ -37,24 +37,3 @@ newProductForm.addEventListener('submit', (event) => {
     newProductImageUrl.value = ''; 
 });
 
-const newDeleteProductForm = document.querySelector('#newDeleteProductForm');
-
-// Add an 'onsubmit' event listener
-newDeleteProductForm.addEventListener('submit', () => {
-
-
-
-    const newProductId = document.querySelector('#id').value;
-    console.log(newProductId);
-
-
-
-
-
-    deleteProduct(newProductId);
-
-
-
-    // Clear the form
-    newProductName.value = '';
-});

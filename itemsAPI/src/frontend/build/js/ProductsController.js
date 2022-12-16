@@ -49,8 +49,8 @@ class ProductsController {
       }
     }
   }
-
-  }
+}
+  
 
   async function save(name, description, price, imageUrl) {
   try{

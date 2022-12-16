@@ -15,7 +15,6 @@ function addProductCard(product) {
           <label><strong>Price: $${product.price}</strong></label><br>\n
           <input type="number" name="beef" size="1" min="0" id="beef"> <br>\n
           <a href="#" class="btn btn-secondary mt-2">Add to cart</a>\n
-          <a href="#" id="deleteProduct" class="btn btn-secondary mt-2">Delete</a>\n
       </div>\n
   </div> \n
 </div>\n`;

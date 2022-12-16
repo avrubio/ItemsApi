@@ -24,11 +24,6 @@ newProductForm.addEventListener('submit', (event) => {
 
     const imageUrl = "./img/" + imageUrl1;
     
-
-    /*
-        Validation code here
-    */
-
     // Add the item to the ItemsController
     productsController.addProduct(name, description, price, imageUrl);
     productsController.saveProductToLocalStorage();

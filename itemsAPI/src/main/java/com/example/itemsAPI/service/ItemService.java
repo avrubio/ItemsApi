@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ItemService {
     public Item save(Item item);
 
-    public void delete(int itemId);
+    public void delete(Integer id);
 
     public List<Item> all();
 

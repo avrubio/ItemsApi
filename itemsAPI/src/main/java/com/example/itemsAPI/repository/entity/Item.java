@@ -11,7 +11,7 @@ public class Item
 {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id = null;
+    private Integer id;
 
     private String name;
 

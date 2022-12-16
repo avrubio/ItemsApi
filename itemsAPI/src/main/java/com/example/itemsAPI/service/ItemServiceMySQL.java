@@ -22,8 +22,8 @@ public class ItemServiceMySQL implements ItemService{
         return itemRepository.save(item);
     }
 
-    public void delete(int itemId) {
-        itemRepository.deleteById(itemId);
+    public void delete(Integer id) {
+        itemRepository.deleteById(id);
     }
 
     public List<Item> all()
